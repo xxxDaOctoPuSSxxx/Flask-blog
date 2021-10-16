@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello World!</h1>
+    <h1>Russian Drift Series</h1>
 
-    <p>This is my first page</p>
-    <p>It is really great</p>
+
+<body>
+  <div class="carousel slide" data-ride="carousel" id="slides">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{url}}" alt="">
+      </div>
+    </div>
+    <h4>Random Photo Chalenges</h4>
+      <img src="{{url}}" />
+  </div>
+</body>
 {% endblock %}

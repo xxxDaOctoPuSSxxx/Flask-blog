@@ -60,6 +60,7 @@ class NamerForm(FlaskForm):
 
 @app.route("/")
 def index():
+    #url = random.choice(images)
     return render_template("index.html")
 
 # Create Name Page
@@ -81,7 +82,7 @@ def name():
 # Create Cstom Error Pages
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("404.html"), 404 
+    return render_template("404.html"), 404
 
 @app.errorhandler(500)
 def page_not_found(e):

@@ -1,1 +1,2 @@
-flask-wtf
+Flask==1.0.0
+

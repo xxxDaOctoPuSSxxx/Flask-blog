@@ -65,7 +65,7 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
-        ECR_REGISTRY: ${{ secrets.FLASK_APP }}
+        ECR_REGISTRY: ${{ secrets.PUBLIC_FLASK_APP }}
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and

@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": null,
+  "executionRoleArn": "arn:aws:iam::351279727922:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -51,19 +51,25 @@
   ],
   "placementConstraints": [],
   "memory": null,
-  "taskRoleArn": null,
+  "taskRoleArn": "arn:aws:iam::351279727922:role/ecsTaskExecutionRole",
   "compatibilities": [
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:351279727922:task-definition/aws_flask_task_definition:2",
-  "family": "aws_flask_task_definition",
+  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:351279727922:task-definition/aws-ecs-task-flask-demo:2",
+  "family": "aws-ecs-task-flask-demo",
   "requiresAttributes": [
     {
       "targetId": null,
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
     }
   ],
   "pidMode": null,

@@ -33,7 +33,7 @@ on:
 
 env:
   AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}      # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: ${{ secrets.Public_Flask_APP }}           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: ${{ secrets.PUBLIC_FLASK_APP }}           # set this to your Amazon ECR repository name
   ECS_SERVICE: aws-ecs-demo-service                  # set this to your Amazon ECS service name
   ECS_CLUSTER: AWS-cluster-flask-app                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: aws_flask_task_definition     # set this to the path to your Amazon ECS task definition

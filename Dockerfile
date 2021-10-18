@@ -1,15 +1,29 @@
 FROM alpine:3.5
+RUN useradd -r -s /bin/bash daoctopuss
 
-# Install python and pip
-RUN apk add --update py2-pip
+ENV HOME /app
+WORKDIR /app
+ENV PATH="/app/.local/bin:${PATH}"
 
-# upgrade pip
-RUN pip install --upgrade pip
+RUN chown -R daoctopuss:daoctopuss /app
+USER daoctopuss
 
-# install Python modules needed by the Python app
-COPY requirements.txt /usr/src/app/
-RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+ENV FLASK_ENV=production
 
+
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ARG AWS_DEFAULT_REGION
+ARG FLASK_SECRET_KEY
+
+ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
+ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
+ENV AWS_DEFAULT_REGION $AWS_DEFAULT_REGION
+ENV FLASK_SECRET_KEY $FLASK_SECRET_KEY
+
+ADD ./requirements.txt ./requirements.txt
+
+RUN pip install --no-cache-dir -r ./requirements.txt --user
 # copy files required for the app to run
 COPY app.py /usr/src/app/
 COPY templates/index.html /usr/src/app/templates/

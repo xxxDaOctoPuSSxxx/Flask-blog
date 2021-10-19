@@ -36,9 +36,9 @@ env:
   ECR_REPOSITORY: ${{ secrets.AWS_REPOSITORY_NAME }}           # set this to your Amazon ECR repository name
   ECS_SERVICE: aws-ecs-demo-service                 # set this to your Amazon ECS service name
   ECS_CLUSTER: AWS-cluster-flask-app                # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: ecs-task-definition.json # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: aws-ecs-task-flask-demo:3 # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: flask-app           # set this to the name of the container in the
+  CONTAINER_NAME: flask-app-conteiner           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 jobs:
